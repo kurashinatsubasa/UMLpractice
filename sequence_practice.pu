@@ -1,0 +1,15 @@
+@startuml [sequence]
+title サンプル
+participant 料理人 as foo1
+participant 食パン as foo2
+participant サラダ as foo3
+activate foo1
+foo1 -> foo2 : パンの準備
+activate foo2
+foo2 -->foo1 : 焼いたパン
+deactivate foo2
+foo1 -> foo3 : サラダの準備
+activate foo3
+foo3 --> foo1 : 盛り付けたサラダ
+deactivate foo3
+@enduml

@@ -1,0 +1,21 @@
+@startuml [sequence]
+title 売り上げのシーケンス図
+participant "店員" as Foo1
+participant "レジ" as Foo2
+participant "受け払い処理" as Foo3
+participant "商品マスタ" as Foo4
+activate Foo1
+Foo1 -> Foo2 : 商品販売確定
+activate Foo2
+Foo2 -> Foo3 : 売上登録、計算処理
+activate Foo3
+Foo2 <-- Foo3 : 売上登録、計算処理完了
+deactivate Foo3
+Foo2 -> Foo4 : 在庫管理処理(在庫－売上商品数)
+activate Foo4
+Foo2 <-- Foo4 : 在庫管理処理完了
+deactivate Foo4
+Foo1 <-- Foo2 : 在庫管理処理完了
+deactivate Foo2
+deactivate Foo1
+@enduml

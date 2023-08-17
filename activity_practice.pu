@@ -1,0 +1,11 @@
+@startuml [activity]
+start
+:処理;
+if(分岐) then(A)
+:処理A;
+else(B)
+:処理B;
+endif
+:結果返却;
+end
+@enduml
