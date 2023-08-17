@@ -1,0 +1,17 @@
+ @startuml [テスト]
+ start
+ :ATMトップメニュー;
+ if (引き出し) then (はい)
+  :引き出し画面;
+ elseif (預け入れ) then (はい)
+  :預け入れ画面;
+ elseif (残高照会) then (はい)
+  :残高照会画面;
+ elseif (振込) then (はい)
+  :振込画面;
+ else (何もしない)
+  :ATMトップ画面;
+ endif
+ :ATMトップメニュー;
+ end
+ @enduml
